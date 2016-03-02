@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+#rma-widget {
+  width: 320px;
+  height: 480px;
+  background: url(../img/ggm-bg-01-02c.jpg);
+  position: relative;
+}
+#video {
+  width: 250px;
+  height: 210px;
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#videoends {
+  width: 250px;
+  height: 210px;
+  background: url(../img/ggm-vidend-01-01c.jpg);
+  display: none;
+}
