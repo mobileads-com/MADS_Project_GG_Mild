@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title></title>
   <script>
-
       var params = function (param) {
           // This function is anonymous, is executed immediately and
           // the return value is assigned to QueryString!
@@ -39,15 +38,13 @@
       var cte = getParam('cte');
   </script>
 </head>
-<body>
+<body style="margin: 0;padding: 0;height: 210px;width: 250px;overflow:hidden;">
   <div id="videoends"></div>
   <div id="yt_frame"></div>
   <script src="js/main.js"></script>
   <script src="js/ninjoe.ytComponent.js"></script>
   <script>
-
     var sdk = new mads();
-
     var yt = new ytComponent({
       'container': 'yt_frame',
       'width': '250',

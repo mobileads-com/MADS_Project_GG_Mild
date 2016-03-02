@@ -163,19 +163,31 @@ mads.prototype.loadCss = function(href) {
  */
 
 
-var Ad = function() {
+var gg = function() {
   this.sdk = new mads();
   var self = this;
 
   self.sdk.loadCss(this.sdk.path + 'css/style.css');
+// console.log(typeof self.sdk.contentTag.innerHTML);
+  if (self.sdk.contentTag !== null) {
+    self.sdk.contentTag.innerHTML = '<iframe style="border:0;" width="250" height="210" src="' + self.sdk.path + 'yt.html?custTracker='+escape(JSON.stringify(self.sdk.custTracker))+'" id="video"></iframe>';
 
-  self.sdk.contentTag.innerHTML = '<iframe style="border:0" width="250" height="210" src="' + self.sdk.path + 'yt.html?custTracker='+escape(JSON.stringify(self.sdk.custTracker))+'" id="video"></iframe>';
-
-  document.getElementById("rma-widget").addEventListener('click', function(e) {
-    e.preventDefault();
-    self.sdk.linkOpener('https://www.youtube.com/watch?v=J5GmGoojzGk&utm_source=mobilewalla&utm_medium=banner&utm_campaign=GGmild');
-    self.sdk.tracker('CTR', 'site');
-  });
+    self.sdk.contentTag.addEventListener('click', function(e) {
+      e.preventDefault();
+      self.sdk.linkOpener('https://www.youtube.com/watch?v=J5GmGoojzGk&utm_source=mobilewalla&utm_medium=banner&utm_campaign=GGmild');
+      self.sdk.tracker('CTR', 'site');
+    });
+  }// } else {
+  //   document.getElementById('rma-widget').innerHTML = '<iframe style="border:0" width="250" height="210" src="' + self.sdk.path + 'yt.html?custTracker='+escape(JSON.stringify(self.sdk.custTracker))+'" id="video"></iframe>';
+  // }
+  var vidends = document.getElementById('videoends');
+  if (vidends !== null) {
+      vidends.addEventListener('click', function(e) {
+        e.preventDefault();
+        self.sdk.linkOpener('https://www.youtube.com/watch?v=J5GmGoojzGk&utm_source=mobilewalla&utm_medium=banner&utm_campaign=GGmild');
+        self.sdk.tracker('CTR', 'site');
+      });
+  }
 };
 
-var ad = new Ad();
+var ad = new gg();
